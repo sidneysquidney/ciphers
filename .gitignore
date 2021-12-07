@@ -1,2 +1,8 @@
 jeremy/
 words_import.py
+
+.DS_Store
+
+
+
+.mypy_cache
