@@ -1,20 +1,15 @@
 from cipher.base import Cipher
 
-class CaesarCipher(Cipher):
+def encrypt(self, text, key):
+    ...
+    return
 
-    def __init__(self):
-        super().__init__()
+def decrypt(self, text, key):
+    ...
+    return
 
-    def encrypt(self, text, key):
-        ...
-        return
-
-    def decrypt(self, text, key):
-        ...
-        return
-
-    def get_keys(self):
-        return 
+def get_keys(self):
+    return 
 
 
     
