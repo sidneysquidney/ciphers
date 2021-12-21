@@ -68,3 +68,20 @@ def dictionary_attack5(text):
 
 # print(cipher_master_text.cipher_master2(sbee2))
 
+print(cipher_functions.vinegar_score('advert', vbee2))
+print(cipher_functions.substitution_score(skey, sbee2))
+# print(cipher_functions.vinegar_score('adverx', vbee2))
+# print(cipher_functions.vinegar_score('adverx', vbee2))
+
+# print(cipher_functions.score())
+print('score', cipher_functions.score(cipher_functions.find_ngrams(bee2, 2, dic = False)) == -205647.0929809534)
+
+print('vinegar_score', cipher_functions.vinegar_score('advert', vbee2) == -205647.0929809534)
+print('substitution_score', cipher_functions.substitution_score(skey, vbee2) == -205647.0929809534)
+
+print('vinegar_get_neighbours', cipher_functions.vinegar_get_neighbours('abc') == ['abc', 'bbc', 'cbc', 'dbc', 'ebc', 'fbc', 'gbc', 'hbc', 'ibc', 'jbc', 'kbc', 'lbc', 'mbc', 'nbc', 'obc', 'pbc', 'qbc', 'rbc', 'sbc', 'tbc', 'ubc', 'vbc', 'wbc', 'xbc', 'ybc', 'zbc', 'aac', 'abc', 'acc', 'adc', 'aec', 'afc', 'agc', 'ahc', 'aic', 'ajc', 'akc', 'alc', 'amc', 'anc', 'aoc', 'apc', 'aqc', 'arc', 'asc', 'atc', 'auc', 'avc', 'awc', 'axc', 'ayc', 'azc', 'aba', 'abb', 'abc', 'abd', 'abe', 'abf', 'abg', 'abh', 'abi', 'abj', 'abk', 'abl', 'abm', 'abn', 'abo', 'abp', 'abq', 'abr', 'abs', 'abt', 'abu', 'abv', 'abw', 'abx', 'aby', 'abz'])
+print('substitution_get_neighbours', cipher_functions.substitution_get_neighbours('abcdefghijklmnopqrstuvwxyz')[:3] == ['bacdefghijklmnopqrstuvwxyz','cbadefghijklmnopqrstuvwxyz','dbcaefghijklmnopqrstuvwxyz'])
+
+print('hillclimb_master - vinegar', cipher_functions.hillclimb_master('iop', cipher_functions.vinegar_score, cipher_functions.vinegar_get_neighbours, score_arg=vbee2[:100], iterations=7) == 'key')
+
+print('hillclimb_master - substitution', cipher_functions.hillclimb_master(alphabet, cipher_functions.substitution_score, cipher_functions.substitution_get_neighbours, score_arg=sbee2[:1000], iterations=25))

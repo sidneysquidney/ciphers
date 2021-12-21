@@ -5,6 +5,7 @@ UXLIRNXSOPQAKJBJTXSVTJKRHXKKJKLIQQOEBLXRSNJKWQKQKYSAQKLRVQNLJKQD\
 QRPLJRSEWIRSWQWJHQKTRKKQRWIXSODXNXJSNJTLIQBRNLLIXNXNUIRLXYSAQKLR\
 VQLJAJTJKEJYKQRAQK\
 '''
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
 # turn_into_string
 bee1 = cipher_functions.turn_into_string('../texts/beemovie.txt')
 bee2 = cipher_functions.turn_into_string('../texts/beemovie_plain.txt')
@@ -108,3 +109,14 @@ print('is_vinegar', [cipher_functions.is_vinegar(vbee2), cipher_functions.is_vin
 # # substitution_decipher
 # print('substitution_decipher', cipher_functions.substitution_decipher(ciphertext) == correct_ciphertext)
 
+# scores
+print('vinegar_score', cipher_functions.vinegar_score('key', vbee2) == -205647.0929809534)
+print('substitution_score', cipher_functions.substitution_score('injvdmtcswkgpbarlfyhuoxeqz', sbee2) == -205647.0929809534)
+
+# get_neighbours
+print('vinegar_get_neighbours', cipher_functions.vinegar_get_neighbours('abc') == ['abc', 'bbc', 'cbc', 'dbc', 'ebc', 'fbc', 'gbc', 'hbc', 'ibc', 'jbc', 'kbc', 'lbc', 'mbc', 'nbc', 'obc', 'pbc', 'qbc', 'rbc', 'sbc', 'tbc', 'ubc', 'vbc', 'wbc', 'xbc', 'ybc', 'zbc', 'aac', 'abc', 'acc', 'adc', 'aec', 'afc', 'agc', 'ahc', 'aic', 'ajc', 'akc', 'alc', 'amc', 'anc', 'aoc', 'apc', 'aqc', 'arc', 'asc', 'atc', 'auc', 'avc', 'awc', 'axc', 'ayc', 'azc', 'aba', 'abb', 'abc', 'abd', 'abe', 'abf', 'abg', 'abh', 'abi', 'abj', 'abk', 'abl', 'abm', 'abn', 'abo', 'abp', 'abq', 'abr', 'abs', 'abt', 'abu', 'abv', 'abw', 'abx', 'aby', 'abz'])
+print('substitution_get_neighbours', cipher_functions.substitution_get_neighbours('abcdefghijklmnopqrstuvwxyz')[:3] == ['bacdefghijklmnopqrstuvwxyz','cbadefghijklmnopqrstuvwxyz','dbcaefghijklmnopqrstuvwxyz'])
+
+# hillclimb_master
+print('hillclimb_master - vinegar', cipher_functions.hillclimb_master('iop', cipher_functions.vinegar_score, cipher_functions.vinegar_get_neighbours, score_arg=vbee2[:100], iterations=7) == 'key')
+print('hillclimb_master - substitution', cipher_functions.hillclimb_master(alphabet, cipher_functions.substitution_score, cipher_functions.substitution_get_neighbours, score_arg=sbee2[:1000], iterations=25) == 'imjvdrpnslkgbyatwfhcuoxeqz')
