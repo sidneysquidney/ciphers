@@ -1,0 +1,26 @@
+don't have a seperate test file for each file, just one test.py file that does all simultaneously
+would be good maybe to put into a seperate folder but don't have to. When I tried before the path 
+didn't want to work (is this what __init__.py file is for??)
+
+'Python 2.7.16 64-bit requires ipykernel to be installed.' prompted when I try to use/make a jupyter 
+notebook in vscode. Something to do with the package manager and the python environment. 
+Had the same issue with installing pandas before. 
+
+what's the __init__.py files for?
+
+main.ipynb?? did i delete?
+
+complete hillclimb howework 
+- why is score_args=() in a tuple for ciphertext...
+- changed loop to just have 1 for loop and to quit on <= rather than just <
+
+what are packages and how to make - is there a subject of all this stuff?
+
+when the decorator redefines the func, is it permantently redefined 
+
+@timeit
+def sid
+
+sid()
+sid()
+sid()
