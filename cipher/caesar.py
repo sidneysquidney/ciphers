@@ -11,5 +11,3 @@ def decrypt(self, text, key):
 def get_keys(self):
     return 
 
-
-    
