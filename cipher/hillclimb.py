@@ -1,9 +1,11 @@
+# import external packages first. Doesn't matter for the code but is advised practice for readability
 import numpy as np
 
-# import cipher_functions
+#from cipher.minheap import MinHeapString
 
-# score args will probably just be the ciphertext, but make sure it's in a tuple: score_args=(ciphertext)
+
 def hillclimb(start_node, score_func, neighbours_func, score_args=(), iterations=5):
+    # score args will probably just be the ciphertext, but make sure it's in a tuple: score_args=(ciphertext)
     node = start_node
     current_score = score_func(node, *score_args)
     count = 0
@@ -21,22 +23,4 @@ def hillclimb(start_node, score_func, neighbours_func, score_args=(), iterations
                 break
             current_score = scores[idx]
             node = neighbours[idx]
-    return node
-
-
-def hillclimb_master(start_node, score_func, neighbours_func, score_arg=None, iterations=25):
-    node = start_node
-    current_score = score_func(node, score_arg)
-    count = 0
-    while count < iterations:
-        count += 1
-        neighbours = neighbours_func(node)
-        scores = np.zeros(shape=len(neighbours))
-        for i, n in enumerate(neighbours):
-            scores[i] = score_func(n, score_arg)
-        idx = np.argmax(scores)
-        if scores[idx] <= current_score:
-            break
-        current_score = scores[idx]
-        node = neighbours[idx]
     return node

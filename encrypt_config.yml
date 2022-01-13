@@ -1,0 +1,7 @@
+file_in : "texts/beemovie_plain.txt"
+file_out : "texts/bee_movie_encrypted.txt"
+
+encrypt_type : c
+encrypt_args :
+  #key : 'key'
+  num : 10
