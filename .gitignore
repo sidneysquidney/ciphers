@@ -3,6 +3,6 @@ words_import.py
 .DS_Store
 
 
-
+.vscode
 .mypy_cache
 
